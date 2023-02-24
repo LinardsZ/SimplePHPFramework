@@ -8,7 +8,7 @@ class Core {
   public function __construct() {
     $url = $this->getUrl();
 
-    if (file_exists("../app/controllers/" . ucfirst($url[0]) . ".php")) { 
+    if (isset($url) && file_exists("../app/controllers/" . ucfirst($url[0]) . ".php")) { 
       $this->controller = ucfirst(array_shift($url));
     }
 
@@ -27,6 +27,7 @@ class Core {
     call_user_func_array([$this->controller, $this->method], $this->parameters);
   }
 
+  
   public function getUrl() {
     // "url" superglobal key can be defined because of the rewrite rule in root directory .htaccess file
     if (isset($_GET["url"])) {
