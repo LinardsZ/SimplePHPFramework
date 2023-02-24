@@ -1,15 +1,16 @@
 <?php
 
-class Pages {
+class Pages extends Controller {
   public function __construct() {
-    echo "test";  
+     
   }
 
   public function index() {
-    
+    // $this->view();
+    echo "Ugh, yo.";
   }
 
-  public function homepage(...$params) {
-    
+  public function homepage() {
+   echo "Lemon";
   }
 }
