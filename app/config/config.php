@@ -1,9 +1,9 @@
 <?php
 define("APPROOT", dirname(dirname(__FILE__)));
-define("URLROOT", "http://testinglinards.com");
-define("SITENAME", "SimplePHPFramework");
+define("URLROOT", "YOUR_URL");
+define("SITENAME", "YOUR_SITENAME");
 
 define("DB_HOST", "localhost");
-define("DB_USER", "linards");
-define("DB_PASS", "P@ssword1");
-define("DB_NAME", "SimplePHPFramework");
+define("DB_USER", "YOUR_NAME");
+define("DB_PASS", "YOUR_PASSWORD");
+define("DB_NAME", "YOUR_DB_NAME");

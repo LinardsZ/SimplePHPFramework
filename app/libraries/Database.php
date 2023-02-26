@@ -26,4 +26,30 @@ class Database {
       echo "An error has occurred, try again later.";
     }
   }
+
+  public function query($sql) {
+    $this->statement = $this->handler->prepare($sql);
+  }
+
+  public function bind($parameter, $value, $type = null) {
+    if (is_null($type)) {
+      if (is_string($value)) $type = PDO::PARAM_STR;
+      if (is_int($value)) $type = PDO::PARAM_INT;
+      if (is_bool($value)) $type = PDO::PARAM_BOOL;
+    }
+
+    $this->statement->bindValue($parameter, $value, $type);
+  }
+
+  public function fetch() {
+    $this->statement->execute();
+
+    return $this->statement->fetchAll(PDO::FETCH_OBJ);
+  }
+
+  public function fetchOne() {
+    $this->statement->execute();
+
+    return $this->statement->fetch(PDO::FETCH_OBJ);
+  }
 }
