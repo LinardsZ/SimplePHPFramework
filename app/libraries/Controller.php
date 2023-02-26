@@ -12,8 +12,8 @@ class Controller {
       require_once("../app/views/" . $view . ".php");
     }
     else {
-      // header("HTTP/1.1 404 Not Found", true, 404);
-      // require_once("../app/views/errors/404.html");
+      header("HTTP/1.1 404 Not Found", true, 404);
+      require_once("../app/views/errors/404.html");
     }
   }
 }
